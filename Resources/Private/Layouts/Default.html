@@ -1,0 +1,18 @@
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+{namespace v=Tx_Vhs_ViewHelpers}
+
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:f="http://fluidtypo3.org/schemas/fluid-master.xsd">
+
+    <f:layout name="Default" />
+
+    <f:render partial="Assets" section="Assets"/>
+
+    <f:render partial="Navigation/MainMenu" section="MainMenu" arguments="{_all}" />
+    <f:render partial="Navigation/SubMenu" section="SubMenu" arguments="{_all}" />
+    <f:render partial="Navigation/BreadcrumbMenu" section="BreadcrumbMenu" arguments="{_all}" />
+
+    <f:render section="Main" />
+
+
+</div>

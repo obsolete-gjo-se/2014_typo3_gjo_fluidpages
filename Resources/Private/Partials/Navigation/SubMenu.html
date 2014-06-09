@@ -1,0 +1,22 @@
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+{namespace v=Tx_Vhs_ViewHelpers}
+
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:f="http://fluidtypo3.org/schemas/fluid-master.xsd"
+     xmlns:v="http://fluidtypo3.org/schemas/vhs-master.xsd">
+
+
+    <f:section name="SubMenu">
+        <v:page.menu entryLevel="1" useShortcutData="FALSE">
+            <f:if condition="{menu}">
+                <ul class="nav nav-pills">
+                    <f:for each="{menu}" as="submenuPage" iteration="iteration">
+                        <li class="{submenuPage.class}"><a tabindex="{iteration.cycle -> v:math.sum(b: 300)}" href="{submenuPage.link}"
+                                                           class="{submenuPage.class}">{submenuPage.title}</a></li>
+                    </f:for>
+                </ul>
+            </f:if>
+        </v:page.menu>
+    </f:section>
+
+</div>

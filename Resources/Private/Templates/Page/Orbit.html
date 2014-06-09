@@ -1,0 +1,63 @@
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+{namespace v=Tx_Vhs_ViewHelpers}
+
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:f="http://fluidtypo3.org/schemas/fluid-master.xsd"
+     xmlns:flux="http://fluidtypo3.org/schemas/flux-master.xsd"
+     xmlns:v="http://fluidtypo3.org/schemas/vhs-master.xsd">
+
+    <f:layout name="Default"/>
+
+    <f:section name="Configuration">
+        <flux:form id="orbit" icon="{v:extension.path.resources(path: 'Icons/icon-orbit.png')}" enabled="true">
+
+            <flux:grid>
+                <flux:grid.row>
+                    <flux:grid.column colPos="11" name="Jumbotron" colspan="3"/>
+                </flux:grid.row>
+                <flux:grid.row>
+                    <flux:grid.column colPos="21" name="left"/>
+                    <flux:grid.column colPos="22" name="Main Content"/>
+                    <flux:grid.column colPos="23" name="right"/>
+                </flux:grid.row>
+                <flux:grid.row>
+                    <flux:grid.column colPos="31" name="Footer Content" colspan="3"/>
+                </flux:grid.row>
+            </flux:grid>
+
+        </flux:form>
+    </f:section>
+
+
+    <f:section name="Main">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <v:content.render column="11"/>
+                    <hr/>
+                </div>
+            </div>
+
+
+            <div class="row">
+
+                <div class="col-md-4">
+                    <v:content.render column="21"/>
+                </div>
+
+                <div class="col-md-4">
+                    <v:content.render column="22"/>
+                </div>
+
+                <div class="col-md-4">
+                    <v:content.render column="23"/>
+                </div>
+
+            </div>
+
+        </div>
+
+    </f:section>
+
+</div>

@@ -1,0 +1,23 @@
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+{namespace v=Tx_Vhs_ViewHelpers}
+
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:v="http://fluidtypo3.org/schemas/vhs-master.xsd">
+
+    <f:section name="Assets">
+
+        <v:asset.style name="normalizeCss" group="fluid" path="{v:extension.path.resources(path: 'Vendor/Css/normalize.css')}" external="true"
+                       standalone="true"/>
+        <v:asset.style name="bootstrapMinCss" group="fluid" path="{v:extension.path.resources(path: 'Vendor/bootstrap-3.1.1/css/bootstrap.min.css')}"
+                       external="true" standalone="true"/>
+        <v:asset.style name="bootstrapThemeCss" group="fluid" path="{v:extension.path.resources(path: 'Vendor/bootstrap-3.1.1/css/bootstrap-theme.min.css')}"
+                       external="true" standalone="true"/>
+
+
+        <v:asset.script name="jQueryJs" group="fluid" path="{v:extension.path.resources(path: 'Vendor/jQuery/jquery.js')}"
+                        external="true" standalone="true"/>
+        <v:asset.script name="bootstrapMinJs" group="fluid" path="{v:extension.path.resources(path: 'Vendor/bootstrap-3.1.1/js/bootstrap.min.js')}"
+                        external="true" standalone="true" dependencies="jQueryJs"/>
+
+    </f:section>
+</div>

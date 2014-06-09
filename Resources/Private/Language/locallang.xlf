@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" product-name="gjo_fluidpages" date="2014-04-23T01:00:11+01:00">
+		<header/>
+		<body>
+
+            ##########################
+            ### Vorlage          ###
+            ##########################
+
+            ### Fields ### nach Sections anpassen? => Configuration / Resources / Content
+            ### Options ###
+            ### Content ###
+
+            ##########################
+            ### Orbit              ###
+            ##########################
+
+                <trans-unit id="flux.orbit" xml:space="preserve">
+                    <source>Orbit</source>
+                </trans-unit>
+
+            ##########################
+            ### Banded             ###
+            ##########################
+
+                <trans-unit id="flux.banded" xml:space="preserve">
+                    <source>Banded</source>
+                </trans-unit>
+
+            ##########################
+            ### Blog               ###
+            ##########################
+
+                <trans-unit id="flux.blog" xml:space="preserve">
+                    <source>Blog</source>
+                </trans-unit>
+
+
+		</body>
+	</file>
+</xliff>

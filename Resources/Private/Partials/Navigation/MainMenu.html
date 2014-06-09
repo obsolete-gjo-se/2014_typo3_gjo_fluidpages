@@ -1,0 +1,38 @@
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+{namespace v=Tx_Vhs_ViewHelpers}
+
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:f="http://fluidtypo3.org/schemas/fluid-master.xsd"
+     xmlns:v="http://fluidtypo3.org/schemas/vhs-master.xsd">
+
+    <f:section name="MainMenu">
+        <nav class="navbar navbar-inverse navbar-static-top" role="navigation" xmlns="http://www.w3.org/1999/html">
+            <div class="navbar-inner">
+                <div class="container navbar-static-top">
+
+                    <a class="navbar-brand" href="{v:site.url()}">
+                        <v:site.name/>
+                    </a>
+
+                    <v:page.menu entryLevel="0" useShortcutData="FALSE">
+                        <div class="container-fluid">
+                            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                <ul class="nav navbar-nav">
+                                    <f:for each="{menu}" as="mainPage" iteration="iteration">
+                                        <li class="{mainPage.class}"><a tabindex="{iteration.cycle -> v:math.sum(b: 100)}"
+                                                                        href="{mainPage.link}"
+                                                                        class="{mainPage.class}">{mainPage.title}</a></li>
+                                    </f:for>
+<li><f:link.page additionalParams="{L:0}">Deutsch</f:link.page></li>
+<li><f:link.page additionalParams="{L:1}">Englisch</f:link.page></li>
+                                </ul>
+
+                            </div>
+                        </div>
+                    </v:page.menu>
+                </div>
+            </div>
+        </nav>
+    </f:section>
+
+</div>

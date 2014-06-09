@@ -1,0 +1,52 @@
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+{namespace v=Tx_Vhs_ViewHelpers}
+
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:f="http://fluidtypo3.org/schemas/fluid-master.xsd"
+     xmlns:v="http://fluidtypo3.org/schemas/vhs-master.xsd">
+
+
+    <f:section name="onPageMenu">
+        <!-- submenu navigation, collapsible -->
+        <v:page.menu entryLevel="{1 -> v:math.ceil() -> v:math.sum(b: 1)}" includeSpacers="TRUE" useShortcutData="FALSE">
+            <f:if condition="{menu}">
+                <div class="container subnav navbar">
+                    <div class="navbar-inner">
+                        <ul class="nav">
+                            <f:for each="{menu}" as="submenuPage" iteration="iteration">
+                                <f:if condition="{submenuPage.doktype} == 199">
+                                    <f:then>
+                                        <li class="disabled">
+                                            <f:if condition="{iteration.isFirst}" else="&nbsp;&nbsp;"/>
+                                            <span class="navbar-text">{submenuPage.title}:</span>
+                                            &nbsp;
+                                        </li>
+                                    </f:then>
+                                    <f:else>
+                                        <li class="{submenuPage.class}"><a tabindex="{iteration.cycle -> v:math.sum(b: 200)}"
+                                                                           href="{submenuPage.link}" class="{submenuPage.class}">{submenuPage.title}</a>
+                                        </li>
+                                    </f:else>
+                                </f:if>
+                            </f:for>
+                        </ul>
+                    </div>
+                </div>
+            </f:if>
+        </v:page.menu>
+    </f:section>
+
+    <f:section name="TabNavigation">
+        <!-- tabbed, lower submenu navigation, collapsible -->
+        <v:page.menu entryLevel="{settings.entryLevel -> v:math.ceil() -> v:math.sum(b: 1)}" useShortcutData="FALSE">
+            <f:if condition="{menu}">
+                <ul class="nav nav-pills">
+                    <f:for each="{menu}" as="submenuPage" iteration="iteration">
+                        <li class="{submenuPage.class}"><a tabindex="{iteration.cycle -> v:math.sum(b: 300)}" href="{submenuPage.link}" class="{submenuPage.class}">{submenuPage.title}</a></li>
+                    </f:for>
+                </ul>
+            </f:if>
+        </v:page.menu>
+    </f:section>
+
+</div>
